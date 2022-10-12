@@ -11,3 +11,5 @@
 6: usar o axios dentro do useEffect
 
 7: passar o useState pra mostra os dados na tela
+
+8: criar um state loading, setLoading atrelado a um bollean originalmente 'true', passar no useEffect() com 'false' no final, em seguida criar uma condicional pra pra retornar loading... enquanto tiver carregando o useEffect()  1: com if(loading){return <h2>loading..</h2>}  2:dentro de JSX: {loading && <h2>Loading...</h2>} 

@@ -12,13 +12,19 @@ const url = 'https://mymoney-jvmh-default-rtdb.firebaseio.com/movimentacoes/2022
 
 function App() {
   const [data, setData] = useState({})
+  const [loading, setLoading] = useState(true)
 
   useEffect(()=> {
+    
     axios.get(url).then(res => {
       console.log(res.data)
       setData(res.data)
+      setLoading(false)
     })
   },[])
+  if(loading){
+    return <h2>Loading...</h2>
+  }
 
   return (
     <div >
