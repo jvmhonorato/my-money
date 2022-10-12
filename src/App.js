@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from "react";
+import axios from "axios";
+
+//axios.get('https://mymoney-jvmh-default-rtdb.firebaseio.com/valor.json').then(res => {console.log(res)})
+
+// axios
+// .post('https://mymoney-jvmh-default-rtdb.firebaseio.com/valor.json',{outro2:'Victor Honorato'}).then(res => {
+//   console.log(res)
+// })
+
+const url = 'https://mymoney-jvmh-default-rtdb.firebaseio.com/movimentacoes/2022-10.json'
 
 function App() {
+  const [data, setData] = useState({})
+
+  useEffect(()=> {
+    axios.get(url).then(res => {
+      console.log(res.data)
+      setData(res.data)
+    })
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+     <h1>My Money</h1>
+     {JSON.stringify(data)}
     </div>
   );
 }

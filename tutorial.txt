@@ -1,0 +1,13 @@
+1: npm install axios react-router-dom
+
+2:apagar as gorduras import o react, axios
+
+3: passar a URL gerada no firebase no axios.get('http://')
+
+4: passar axios.post('http://') pra adiconar dados
+
+5: passar URL do DB firebase em uma const url 
+
+6: usar o axios dentro do useEffect
+
+7: passar o useState pra mostra os dados na tela
