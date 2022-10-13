@@ -36,3 +36,15 @@ DINAMYC SAVE BUTTON
 
 15: EM seguida criar uma função newSave  e dentro dela chmar a função post({valor: x, descricao: y}) com o objetos e seus valores dentro
 16: Criar uma função doRemove com a função remove(url) que vem de useDelete, e, seguida criar um <button> com o evento onClick chamndo essa função 
+
+REST
+17: criar rest.js criar dentro dele a função init com baseURL como parâmetro, com a função useGet(), getPost(), getDelete() dentro dela exportar init
+e importar em App.js Rest, 
+
+No axios.post(baseURL + resource +'.json'), axios.get(baseURL + resource + '.json', data)
+
+18:Em App.js estanciar em baseURL a url básica do firebase, em seguida abstrair o useGet, usePost e useDelete de rest passando o parâmetro baseURL: const {useGet, usePost, useDelete} = Rest(baseURL) depois chamr as funções passando o resource useGet('movimentacoes/2022-10')  usePost('movimentacoes/2022-10')
+
+
+
+

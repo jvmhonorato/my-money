@@ -1,19 +1,23 @@
 import React from "react";
-import useDelete from "./useDelete";
-
+//import useDelete from "./useDelete";
 // import usePost from "./usePost";
-import useGet from "./useGet";
-import usePost from "./usePost";
+//import useGet from "./useGet";
+
+import Rest from "./rest";
 
 
+const baseURL = 'https://mymoney-jvmh-default-rtdb.firebaseio.com/'
+const { useGet, usePost, useDelete } = Rest(baseURL)
 
-const url = 'https://mymoney-jvmh-default-rtdb.firebaseio.com/movimentacoes/2022-10.json'
+//const url = 'https://mymoney-jvmh-default-rtdb.firebaseio.com/movimentacoes/2022-10.json'
+
+
 
 function App() {
-  const data = useGet(url)
+  const data = useGet('movimentacoes/2022-10')
 
   // return [data,post] from usePost turn to [postData, post]
- const [postData, post] = usePost(url)
+ const [postData, post] = usePost('movimentacoes/2022-10')
 
  const [deleteData, remove] = useDelete()
 
@@ -24,7 +28,7 @@ function App() {
   }
 
   const doRemove = () => {
-    remove('https://mymoney-jvmh-default-rtdb.firebaseio.com/movimentacoes/2022-10/-NEDuar3uNKWkdBXHeJE.json ')
+    remove('movimentacoes/2022-10/-NEG65cszRfrWj1V1jMw')
   }
   
   
