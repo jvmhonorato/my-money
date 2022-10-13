@@ -12,15 +12,27 @@
 
 7: passar o useState pra mostra os dados na tela
 
-8: criar um state loading, setLoading atrelado a um bollean originalmente 'true', passar no useEffect() com 'false' no final, em seguida criar uma condicional pra pra retornar loading... enquanto tiver carregando o useEffect()  1: com if(loading){return <h2>loading..</h2>}  2:dentro de JSX: 
+STATE
+8: criar um state loading, setLoading atrelado a um bollean originalmente 'true', passar no useEffect() com 'false' no final, 
+
+REDUCE
+9: Usar o reduce com o loading e o data atrelado a uma condicinal booleana, em seguida retonar na funçao useGet usePost e exportar pra App.js
+
+10:em seguida criar uma condicional pra pra retornar loading... enquanto tiver carregando o useEffect()  1: com if(loading){return <h2>loading..</h2>}  2:dentro de JSX: 
 {loading && <h2>Loading...</h2>}
 
 
+useGet.js
+11:Criar componente useGet.js com função reduce em seguida usar essa função como parãmetro do hook useReduce dentro da função useGet, passar uma axios.get dentro do useEffect retornando a condicional atrelada ao reduce, dar um return em data
+
+usePost.js
+12:Criar componente usePost.js com função reduce em seguida usar ela como parãmetro do hook useReduce dentro da função usePost, passar um axios.post dentro de uma fuunção post() retornando a condicional atrelada ao reduce   e dar um retunr [data, post]
+
+useDelete.js 
+13:Criar componente useDelete.js com a função reduce em seguida passar ela como parãmetro do hook useReduce dentro da função usedelete, passar um axios.delete dentro da função remove atrelada a condicinal reduce retorando [data, remove]
+
 
 DINAMYC SAVE BUTTON
-9: cria uma função post passando o argumneto data e dentro por axios.post(URL, ARGUNENTO)
 
-10: EM seguida criar uma função newSave  e dentro dela chmar a função post({valor: x, descricao: y}) com o objetos e seus valores dentro
-
-
-11: componetizar o hook em useGet.js e usePost.js
+15: EM seguida criar uma função newSave  e dentro dela chmar a função post({valor: x, descricao: y}) com o objetos e seus valores dentro
+16: Criar uma função doRemove com a função remove(url) que vem de useDelete, e, seguida criar um <button> com o evento onClick chamndo essa função 
