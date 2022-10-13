@@ -1,28 +1,27 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
+
+// import usePost from "./usePost";
+import useGet from "./useGet";
+import usePost from "./usePost";
 import axios from "axios";
 
-//axios.get('https://mymoney-jvmh-default-rtdb.firebaseio.com/valor.json').then(res => {console.log(res)})
-
-// axios
-// .post('https://mymoney-jvmh-default-rtdb.firebaseio.com/valor.json',{outro2:'Victor Honorato'}).then(res => {
-//   console.log(res)
-// })
 
 const url = 'https://mymoney-jvmh-default-rtdb.firebaseio.com/movimentacoes/2022-10.json'
 
 function App() {
-  const [data, setData] = useState({})
-  const [loading, setLoading] = useState(true)
+  const data = useGet(url)
+ const [postData, post] = usePost(url)
 
-  useEffect(()=> {
-    
-    axios.get(url).then(res => {
-      console.log(res.data)
-      setData(res.data)
-      setLoading(false)
-    })
-  },[])
-  if(loading){
+  const newSave = () => {
+    post({valor: 44, descricao:'Victor'})
+  }
+  
+  
+  // const saveNew = () => {
+  //   post({valor: 14, descricao: 'olá'})
+  // }
+
+  if(data.loading){
     return <h2>Loading...</h2>
   }
 
@@ -30,6 +29,8 @@ function App() {
     <div >
      <h1>My Money</h1>
      {JSON.stringify(data)}
+     <button onClick={newSave}>Salvar</button>
+     <pre>{JSON.stringify(postData)}</pre>
     </div>
   );
 }

@@ -12,4 +12,15 @@
 
 7: passar o useState pra mostra os dados na tela
 
-8: criar um state loading, setLoading atrelado a um bollean originalmente 'true', passar no useEffect() com 'false' no final, em seguida criar uma condicional pra pra retornar loading... enquanto tiver carregando o useEffect()  1: com if(loading){return <h2>loading..</h2>}  2:dentro de JSX: {loading && <h2>Loading...</h2>} 
+8: criar um state loading, setLoading atrelado a um bollean originalmente 'true', passar no useEffect() com 'false' no final, em seguida criar uma condicional pra pra retornar loading... enquanto tiver carregando o useEffect()  1: com if(loading){return <h2>loading..</h2>}  2:dentro de JSX: 
+{loading && <h2>Loading...</h2>}
+
+
+
+DINAMYC SAVE BUTTON
+9: cria uma função post passando o argumneto data e dentro por axios.post(URL, ARGUNENTO)
+
+10: EM seguida criar uma função newSave  e dentro dela chmar a função post({valor: x, descricao: y}) com o objetos e seus valores dentro
+
+
+11: componetizar o hook em useGet.js e usePost.js
