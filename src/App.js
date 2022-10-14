@@ -1,11 +1,13 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 //import useDelete from "./useDelete";
 // import usePost from "./usePost";
 //import useGet from "./useGet";
 import Header from "./elements/Header";
-import Meses from "./Meses";
-import AddMes from "./AddMes";
-import Rest from "./rest";
+import Home from "./pages/Home";
+import Movimentacoes from "./pages/Movimentacoes";
+import Rest from "./utils/rest";
+
 
 
 const baseURL = 'https://mymoney-jvmh-default-rtdb.firebaseio.com/'
@@ -41,18 +43,20 @@ function App() {
 
 
   return (
-  
+ 
     <div className="container" >
-       <Header/>
 
-      <AddMes/>
+      <Router>
+        <Header/>
+        <Routes>
+        <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/movimentacoes/:data" element={<Movimentacoes/>}/>
+        </Routes>
+        
+       
 
-      <Meses/>
+      </Router>
 
-     {/* <button onClick={newSave}>Salvar</button>
-     <pre>{JSON.stringify(postData)}</pre>
-     <button onClick={doRemove}>Remove</button>
-     <pre>{JSON.stringify(deleteData)}</pre> */}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react"; 
-import Rest from "./rest";
+import Rest from "../../utils/rest";
+import { Link } from "react-router-dom";
 
 
 const baseURL = 'https://mymoney-jvmh-default-rtdb.firebaseio.com/'
@@ -31,7 +32,7 @@ const Meses = () => {
           .map(mes => {
             return (
                 <tr key={mes}>
-                    <td>{mes}</td>
+                    <td><Link to={`/movimentacoes/${mes}`}>{mes}</Link></td>
                     <td>{data.data[mes].input_forecast}</td>
                     <td>{data.data[mes].input}</td>
                     <td>{data.data[mes].output_forecast}</td>
