@@ -63,4 +63,6 @@ INSTALL BOOTSTRAP
 
 24: crair pasta src/elements e componetizar o <Header/>
 
-25: criar componete Meses.js
+25: criar componete Meses.js exportar dados pra App.js
+
+26 Criar componente AddMes.js e exportar dados pra App.js

@@ -4,6 +4,7 @@ import React from "react";
 //import useGet from "./useGet";
 import Header from "./elements/Header";
 import Meses from "./Meses";
+import AddMes from "./AddMes";
 import Rest from "./rest";
 
 
@@ -41,22 +42,13 @@ function App() {
 
   return (
   
-    <div >
+    <div className="container" >
        <Header/>
 
-      <select>
-        <option>2022</option>
-        <option>2023</option>
-      </select>
-      <select>
-        <option>01</option>
-        <option>02</option>
-      </select>
-     
-      <button>Adicionar mês</button><br/>
+      <AddMes/>
 
       <Meses/>
-      
+
      {/* <button onClick={newSave}>Salvar</button>
      <pre>{JSON.stringify(postData)}</pre>
      <button onClick={doRemove}>Remove</button>
