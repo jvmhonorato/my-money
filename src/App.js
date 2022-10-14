@@ -2,7 +2,8 @@ import React from "react";
 //import useDelete from "./useDelete";
 // import usePost from "./usePost";
 //import useGet from "./useGet";
-
+import Header from "./elements/Header";
+import Meses from "./Meses";
 import Rest from "./rest";
 
 
@@ -37,18 +38,11 @@ function App() {
     // post({valor: 14, descricao: 'olá'})
   }
 
-  if(data.loading){
-    return <h2>Loading...</h2>
-  }
 
   return (
   
     <div >
-       <nav className="navbar navbar-light bg-light">
-        <div className="container">
-         <h1 className="navbar-brand">MyMoney</h1>
-        </div>
-      </nav>
+       <Header/>
 
       <select>
         <option>2022</option>
@@ -61,38 +55,8 @@ function App() {
      
       <button>Adicionar mês</button><br/>
 
-      <table className="table container">
-        <thead>
-          <tr>
-            <th>Mês</th>
-            <th>Previsão de entrada</th>
-            <th>Entrada</th>
-            <th>Previsão de saída</th>
-            <th>Saída</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-          Object
-          .keys(data.data)
-          .map(mes => {
-            return (
-              <tr key={mes}>
-              <td>{mes}</td>
-              <td>{data.data[mes].input_forecast}</td>
-              <td>{data.data[mes].input}</td>
-              <td>{data.data[mes].output_forecast}</td>
-              <td>{data.data[mes].output}</td>
-            </tr>
-
-            )
-          })
-          }
-         
-        </tbody>
-      </table>
-    
-     {JSON.stringify(data)}
+      <Meses/>
+      
      {/* <button onClick={newSave}>Salvar</button>
      <pre>{JSON.stringify(postData)}</pre>
      <button onClick={doRemove}>Remove</button>
