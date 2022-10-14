@@ -55,3 +55,7 @@ INSTALL BOOTSTRAP
 20: Add Navbar em App.js
 
 21: passar os <select> com seus <option value='01'> com os valores em value 
+
+22: passar o useGet('meses'), criar os dados n firebase passando os inputs e outputs no resource: meses
+
+23: crir uma <table> pra retornar os dados dentro de <tbody> passar o Object.key(data.data).map() passar os valores vindo de data com a key={} na tag <tr key={mes}>  e depois passar os dados: <td>{data.data[mes].input_forecast}</td> output_forecast, input e output
