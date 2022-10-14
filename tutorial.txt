@@ -8,7 +8,7 @@
 
 5: passar URL do DB firebase em uma const url 
 
-6: usar o axios dentro do useEffect
+6: usar o axios.get() dentro do useEffect
 
 7: passar o useState pra mostra os dados na tela
 
@@ -48,3 +48,10 @@ No axios.post(baseURL + resource +'.json'), axios.get(baseURL + resource + '.jso
 
 
 
+INSTALL BOOTSTRAP
+19: npm install bootstrap,  import em index.js  import 'bootstrap/dist/css/bootstrap.css'
+
+
+20: Add Navbar em App.js
+
+21: passar os <select> com seus <option value='01'> com os valores em value 

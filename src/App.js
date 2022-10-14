@@ -41,8 +41,24 @@ function App() {
   }
 
   return (
+  
     <div >
-     <h1>My Money</h1>
+       <nav className="navbar navbar-light bg-light">
+        <div className="container">
+         <h1 className="navbar-brand">MyMoney</h1>
+        </div>
+      </nav>
+
+      <select>
+        <option>2022</option>
+        <option>2023</option>
+      </select>
+      <select>
+        <option>01</option>
+        <option>02</option>
+      </select>
+      <br/>
+    
      {JSON.stringify(data)}
      <button onClick={newSave}>Salvar</button>
      <pre>{JSON.stringify(postData)}</pre>
