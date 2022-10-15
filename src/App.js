@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom'
 //import useDelete from "./useDelete";
 // import usePost from "./usePost";
 //import useGet from "./useGet";

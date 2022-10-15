@@ -15,6 +15,7 @@
 STATE
 8: criar um state loading, setLoading atrelado a um bollean originalmente 'true', passar no useEffect() com 'false' no final, 
 
+usar
 REDUCE
 9: Usar o reduce com o loading e o data atrelado a uma condicinal booleana, em seguida retonar na funçao useGet usePost e exportar pra App.js
 
@@ -84,4 +85,8 @@ instalar o react-router-dom: npm install react-router-dom
 
 29: Criar pasta utils e mover rest.js, useGet.js, usePost.js, useDelete.js pra lá
 
-30:
+
+MOVIMENTACOES FIREBASE 
+30: Em pages/Movimentacoes.js criar componete trackeado dinamicamente vindo de App.jscom o :data, usar useParams pra linkar e chamar na função useGet os dados movimentacoes vindo do firebase
+
+OBS: No firebase usar como ID "a1" pois somente o numero retorna NULL
