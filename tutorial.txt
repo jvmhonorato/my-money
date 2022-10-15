@@ -74,7 +74,7 @@ TRACK ROUTES: instalar o react-router-dom: npm install react-router-dom
 
 Criar o componente Movimentacoes.js  e trackiar a rota em App.js dinamicamente:    <Route exact path="/movimentacoes/:data" element={<Movimentacoes/>}/>
 
-instalar o react-router-dom: npm install react-router-dom
+
 
 
 27: EM Meses.js importar Link de React pra linkar os meses, depois passar o Link pra ser direcionado dinamicamente:
@@ -87,6 +87,18 @@ instalar o react-router-dom: npm install react-router-dom
 
 
 MOVIMENTACOES FIREBASE 
-30: Em pages/Movimentacoes.js criar componete trackeado dinamicamente vindo de App.jscom o :data, usar useParams pra linkar e chamar na função useGet os dados movimentacoes vindo do firebase
+30: Em pages/Movimentacoes.js criar componete trackeado dinamicamente vindo de App.js com o :data, usar useParams pra linkar e chamar na função useGet os dados movimentacoes vindo do firebase. PASSAR o o data no Object.keys([data]) dentro de um array 
 
 OBS: No firebase usar como ID "a1" pois somente o numero retorna NULL
+
+INPUTS
+
+31: criar <input> na tabela pra descricao e valor.
+
+32: criar um usestate descricao, setDescricaoe um useState valor, setValor
+
+33: crair função onChangeDescricao pra alterar o estado com o setDescricao(evt.target.value) e função onChangeValor(evt.target.value) pra mudar o estdo do valor OBS: passar parseFloat em setValor
+
+34:Criar <button> com evento onClick chamando a função salvarMovimentacao()
+
+35:estancia o usePost() em [postData, salvar] em seguida passar 'salvar' dentro da função salvarMovimentacao com descricao e valor dentro dela: salvar({descricao, salvar})
