@@ -15,7 +15,7 @@ const Movimentacoes = () => {
 
 const data = useGet(`movimentacoes/${id}`)
 const [postData, salvar] = usePost(`movimentacoes/${id}`)
-const object = Object.keys([data])
+const object = Object.keys(data.data)
 const [descricao, setDescricao] = useState('')
 const [valor, setValor] = useState(0.0)
 
@@ -27,8 +27,8 @@ const onChangeValor = evt => {
 }
 const salvarMovimentacao = () => {
     salvar({
-        descricao,
-        valor
+        descricao:descricao,
+        valor:valor
     })
 }
 
@@ -48,8 +48,8 @@ const salvarMovimentacao = () => {
                   .map(movimentacao => {
                     return (
                         <tr key={movimentacao}>
-                            <td>{data.data.descricao}</td>
-                            <td>{data.data.valor}</td>
+                            <td>{data.data[movimentacao].descricao}</td>
+                            <td>{data.data[movimentacao].valor}</td>
                         </tr>
                     )
                   })  
@@ -65,7 +65,7 @@ const salvarMovimentacao = () => {
                 </tr>
             </tbody>
           </table>
-          <pre>{JSON.stringify(data)}</pre>
+          <pre>{JSON.stringify(data.data)}</pre>
         </div>
     )
 }

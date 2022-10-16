@@ -43,14 +43,14 @@ const init = baseURL => {
             //first params : URL, second params: object 
             axios.post(baseURL+resource+'.json',data)
             .then(res => {
-              console.log(res,data)
+              console.log(res.data)
               dispatch({
                 type: 'SUCCESS',
                 data: res.data
               })
             })
           }
-          return [data,post]
+          return [data, post]
     }
     const useDelete = () => {
         const [data, dispatch] = useReducer(reducer, INITIAL_STATE )

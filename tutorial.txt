@@ -101,4 +101,7 @@ INPUTS
 
 34:Criar <button> com evento onClick chamando a função salvarMovimentacao()
 
-35:estancia o usePost() em [postData, salvar] em seguida passar 'salvar' dentro da função salvarMovimentacao com descricao e valor dentro dela: salvar({descricao, salvar})
+35:estancia o usePost() em [postData, salvar] em seguida passar 'salvar' dentro da função salvarMovimentacao com descricao e valor dentro dela: salvar({descricao, salvar}), os dados serão mandados pro firebase
+
+36: pra rastrear os IPs dinamicos criados pelos firebase passar paramtro da função .map( movimentacao => {  <td>{data.data[movimentacao].descricao}</td>})
+passando o paramentro no retornoo ao lado de data[movimentacao]
