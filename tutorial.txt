@@ -105,3 +105,12 @@ INPUTS
 
 36: pra rastrear os IPs dinamicos criados pelos firebase passar paramtro da função .map( movimentacao => {  <td>{data.data[movimentacao].descricao}</td>})
 passando o paramentro no retornoo ao lado de data[movimentacao]
+
+
+SAVE AND RENDER
+
+37 tornar a função axios.post async em rest.js em seguida em Movimentacoes.js na função salvarMovimentacao deixar ela async e passar o setDescricao('') e o setValor(0.0) apos salvar
+
+38: tornar a função get async depois chamar ela no useEffect. No return usar o spread operator tranformando "...data" em objeto junto com "refetch:load"
+
+39: Em Movimentacoes.js na função salvarMovimentacao() chamar data.refetch() apos o setValor() pra renderizar o useGet assim que o novo dado for salvo

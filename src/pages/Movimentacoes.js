@@ -25,11 +25,14 @@ const onChangeDescricao = evt => {
 const onChangeValor = evt => {
     setValor(parseFloat(evt.target.value))
 }
-const salvarMovimentacao = () => {
-    salvar({
+const salvarMovimentacao = async() => {
+   await salvar({
         descricao:descricao,
         valor:valor
     })
+    setDescricao('')
+    setValor(0.0)
+    data.refetch()
 }
 
     return (
