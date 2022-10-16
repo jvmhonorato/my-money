@@ -15,10 +15,10 @@ const Movimentacoes = () => {
 
 const data = useGet(`movimentacoes/${id}`)
 const [postData, salvar] = usePost(`movimentacoes/${id}`)
-const [removerData, remover] = useDelete('')
+const [removerData, remover] = useDelete()
 const object = Object.keys(data.data)
 const [descricao, setDescricao] = useState('')
-const [valor, setValor] = useState(0.0)
+const [valor, setValor] = useState('')
 
 const onChangeDescricao = evt => {
     setDescricao(evt.target.value)
@@ -27,14 +27,16 @@ const onChangeValor = evt => {
     setValor(parseFloat(evt.target.value))
 }
 const salvarMovimentacao = async() => {
-   await salvar({
-        descricao:descricao,
-        valor:valor
-    })
-    setDescricao('')
-    setValor(0.0)
-    data.refetch()
-}
+    if(!isNaN(valor) ) {
+        await salvar({
+        descricao,
+        valor:parseFloat(valor)
+        })
+         setDescricao('')
+          setValor(0)
+          data.refetch()
+         }
+       }
 const removerMovimentacao = async(id2) => {
 await remover(`movimentacoes/${id}/${id2}` )
 data.refetch()
@@ -59,8 +61,8 @@ data.refetch()
                                 {data.data[movimentacao].descricao}
                                 </td>
                             <td>
-                                {data.data[movimentacao].valor}
-                                <button onClick={() => removerMovimentacao(movimentacao)}>-</button>
+                                {data.data[movimentacao].valor}  {''}
+                                <button className='btn btn-danger' onClick={() => removerMovimentacao(movimentacao)}>-</button>
                              </td>
                         </tr>
                     )
@@ -72,7 +74,7 @@ data.refetch()
                     </td>
                     <td>
                         <input type='text' value={valor} onChange={onChangeValor}/>
-                        <button onClick={salvarMovimentacao}>Add</button>
+                        <button className='btn btn-success' onClick={salvarMovimentacao}>Add</button>
                     </td>
                 </tr>
             </tbody>
