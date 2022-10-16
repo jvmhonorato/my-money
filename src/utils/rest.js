@@ -59,16 +59,14 @@ const init = baseURL => {
 
     const useDelete = () => {
         const [data, dispatch] = useReducer(reducer, INITIAL_STATE )
-        const remove = resource => {
+        const remove = async(resource) => {
             dispatch({type: 'REQUEST'})
             //first params : URL, second params: object 
-            axios.delete(baseURL+resource+'.json')
-            .then(() => {
-             
-              dispatch({
+            await axios.delete(baseURL+resource+'.json')
+             dispatch({
                 type: 'SUCCESS'
               })
-            })
+            
           }
           return [data,remove]
     }

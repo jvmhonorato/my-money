@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 
 const baseURL = 'https://mymoney-jvmh-default-rtdb.firebaseio.com/'
-const { useGet, usePost } = Rest(baseURL)
+const { useGet, usePost, useDelete } = Rest(baseURL)
 
 
 const Movimentacoes = () => {
@@ -15,6 +15,7 @@ const Movimentacoes = () => {
 
 const data = useGet(`movimentacoes/${id}`)
 const [postData, salvar] = usePost(`movimentacoes/${id}`)
+const [removerData, remover] = useDelete('')
 const object = Object.keys(data.data)
 const [descricao, setDescricao] = useState('')
 const [valor, setValor] = useState(0.0)
@@ -34,7 +35,10 @@ const salvarMovimentacao = async() => {
     setValor(0.0)
     data.refetch()
 }
-
+const removerMovimentacao = async(id2) => {
+await remover(`movimentacoes/${id}/${id2}` )
+data.refetch()
+}
     return (
         <div className='container'>
           <h1>Movimentações</h1>
@@ -51,8 +55,13 @@ const salvarMovimentacao = async() => {
                   .map(movimentacao => {
                     return (
                         <tr key={movimentacao}>
-                            <td>{data.data[movimentacao].descricao}</td>
-                            <td>{data.data[movimentacao].valor}</td>
+                            <td>
+                                {data.data[movimentacao].descricao}
+                                </td>
+                            <td>
+                                {data.data[movimentacao].valor}
+                                <button onClick={() => removerMovimentacao(movimentacao)}>-</button>
+                             </td>
                         </tr>
                     )
                   })  

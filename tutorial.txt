@@ -114,3 +114,13 @@ SAVE AND RENDER
 38: tornar a função get async depois chamar ela no useEffect. No return usar o spread operator tranformando "...data" em objeto junto com "refetch:load"
 
 39: Em Movimentacoes.js na função salvarMovimentacao() chamar data.refetch() apos o setValor() pra renderizar o useGet assim que o novo dado for salvo
+
+delete
+40:EM Movimentacoes.js estanciar em [removerdata, remover] o useDelete()
+
+41: EM Movimentacoes.js criar função removerMovimentacao(id2) passando o parâmetro  "ID2" com async await chamando a função remover(path/ ${id2}) com o caminho no primeiro parâmetro / passando o parãmetro com tamplatestring ${id2}
+
+42: EM Movimentacoes.js criar no JXS na tabela  do object.map um <button> pra ser renderizado ao lado dos dados com o evento onClick chamando a função removerMovimentacao() com callback passando o map movimentacao dentro como parâmetro "ID2" que vai representar movimentacao no .map() :onClick={() => removerMovimentacao(movimentacao)
+ movimentacao = id2
+
+ 43: tranformar useDelete em async, em seguida em Movimentacoes.js na função removerMovimentacao() dar um data.refetch() pra rendrizar apos a remoção
