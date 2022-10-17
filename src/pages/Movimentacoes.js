@@ -23,11 +23,13 @@ const [valor, setValor] = useState('')
 const onChangeDescricao = evt => {
     setDescricao(evt.target.value)
 }
+
 const onChangeValor = evt => {
     setValor(parseFloat(evt.target.value))
 }
+
 const salvarMovimentacao = async() => {
-    if(!isNaN(valor) ) {
+    if(!isNaN(valor)   ) {
         await salvar({
         descricao,
         valor:parseFloat(valor)
@@ -37,10 +39,16 @@ const salvarMovimentacao = async() => {
           data.refetch()
          }
        }
+
 const removerMovimentacao = async(id2) => {
 await remover(`movimentacoes/${id}/${id2}` )
 data.refetch()
 }
+
+
+
+
+
     return (
         <div className='container'>
           <h1>Movimentações</h1>

@@ -124,3 +124,21 @@ delete
  movimentacao = id2
 
  43: tranformar useDelete em async, em seguida em Movimentacoes.js na função removerMovimentacao() dar um data.refetch() pra rendrizar apos a remoção
+
+
+ ADD YEAR MONTHS DINAMYC
+
+ 44: em Addmes.js criar constantes minYear e maxYear depois criar um laço FOR  utilizando ela como parâmetros pra add o incremento
+ em seguida utiliza no <select> a função .map() passando o array year dentro do <option> gerando os meses 
+
+ 45: fazer a mesma coisa no com mes criar um laço FOR de 1 a 12 e passar no <select> o array months .map() com o <option> retornando {month}
+
+ 46: ADD a função zeroPad pr add um 0 no mes que estiver abaixo de 10, em seguida passar um map antes do map principal em months.map()
+
+ ADD 
+
+ 47: crair evento onClick no botão add months em seguida criar a função verMes()
+
+ 48: importar o useRef() e estanciar em uma constante refYear e refMonth depois passar no <select ref={refYear}> e <select ref={refMonth}>  passaar como segundo parãmetro da função verMes() copm .current.value
+
+ 49:criar p state redi,setRedir  e passar o setRedir na função verMes, em seguida criar um condicional pra redirecionar pra página do mês usando o hook Naviagate 
