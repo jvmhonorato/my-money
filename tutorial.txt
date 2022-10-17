@@ -142,3 +142,15 @@ delete
  48: importar o useRef() e estanciar em uma constante refYear e refMonth depois passar no <select ref={refYear}> e <select ref={refMonth}>  passaar como segundo parãmetro da função verMes() copm .current.value
 
  49:criar p state redi,setRedir  e passar o setRedir na função verMes, em seguida criar um condicional pra redirecionar pra página do mês usando o hook Naviagate 
+ 
+ FIREBASE CLOUD FUNCTION
+
+ 50: npm install -g firebase-tools
+
+ 51: firebase login --interactive
+
+52: firebase init /set todas as configurações de inicio do firebase
+
+53: configurar o function/index.js 
+
+54: fazer deply so do function
