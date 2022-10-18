@@ -153,4 +153,7 @@ delete
 
 53: configurar o function/index.js 
 
-54: fazer deply so do function
+54: fazer deploy so do function
+
+55: firebase deply --only functions
+
